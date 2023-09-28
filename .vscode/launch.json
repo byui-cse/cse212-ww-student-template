@@ -159,5 +159,18 @@
             "stopAtEntry": false
         },
 
+        {
+            "name": "Sandbox Project",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-sandbox_project",
+            "program": "${workspaceFolder}/sandbox/sandbox_project/bin/Debug/net7.0/sandbox_project.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/sandbox_project",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
     ]
 }
