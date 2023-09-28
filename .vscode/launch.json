@@ -4,6 +4,19 @@
     "configurations": [
 
         {
+            "name": "Sandbox Project",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-sandbox_project",
+            "program": "${workspaceFolder}/sandbox/sandbox_project/bin/Debug/net7.0/sandbox_project.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/sandbox_project",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        {
             "name": "01 Individual Activity",
             "type": "coreclr",
             "request": "launch",
@@ -154,19 +167,6 @@
             "program": "${workspaceFolder}/week06/code/bin/Debug/net7.0/code.dll",
             "args": [],
             "cwd": "${workspaceFolder}/week06/code",
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "stopAtEntry": false
-        },
-
-        {
-            "name": "Sandbox Project",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build-sandbox-sandbox_project",
-            "program": "${workspaceFolder}/sandbox/sandbox_project/bin/Debug/net7.0/sandbox_project.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/sandbox/sandbox_project",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
