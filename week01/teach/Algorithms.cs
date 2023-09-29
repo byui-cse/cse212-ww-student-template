@@ -86,42 +86,4 @@ public static class Algorithms {
 
         return count;
     }
-
-    /// <summary>
-    /// Determine and return the length of the numbers list, the sum
-    /// of all the numbers, and the average of the numbers.
-    /// </summary>
-    /// <returns>Tuple with the sum, count, and average of the supplied numbers</returns>
-    private static Tuple<int, int, float> CalculateStats(int[] numbers) {
-        var totalSum = 0;
-        var count = 0;
-        foreach (var number in numbers)
-            totalSum += number;
-        foreach (var number in numbers)
-            count += 1;
-        var average = ((float)totalSum) / count;
-        return new Tuple<int, int, float>(totalSum, count, average);
-    }
-
-    /// <summary>
-    /// Print a filled in isosceles triangle to the screen
-    /// </summary>
-    /// <param name="size">number of characters for the length of the side</param>
-    private static void PrintTriangle(int size) {
-        for (var i = 0; i < size; ++i) {
-            for (var j = 0; j <= i; ++j)
-                Console.Write("*");
-            Console.WriteLine();
-        }
-    }
-
-    /// <summary>
-    /// Display each letter of each name in the list on a separate line
-    /// </summary>
-    /// <param name="names">array of names to display</param>
-    private static void DisplayLettersInNames(string[] names) {
-        foreach (var name in names)
-        foreach (var letter in name)
-            Console.WriteLine(letter);
-    }
 }
