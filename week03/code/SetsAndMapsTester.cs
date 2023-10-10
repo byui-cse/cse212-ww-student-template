@@ -103,7 +103,7 @@ public static class SetsAndMapsTester {
     /// be displayed because <c>ta</c> is not in the list of words.
     ///
     /// As a special case, if the letters are the same (example: 'aa') then
-    /// it would not match anything else (remember no the assumption above
+    /// it would not match anything else (remember the assumption above
     /// that there were no duplicates) and therefore should not be displayed.
     /// </summary>
     /// <param name="words">An array of 2-character words (lowercase, no duplicates)</param>
