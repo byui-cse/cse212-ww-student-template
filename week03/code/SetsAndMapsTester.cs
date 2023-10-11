@@ -103,7 +103,7 @@ public static class SetsAndMapsTester {
     /// be displayed because <c>ta</c> is not in the list of words.
     ///
     /// As a special case, if the letters are the same (example: 'aa') then
-    /// it would not match anything else (remember no the assumption above
+    /// it would not match anything else (remember the assumption above
     /// that there were no duplicates) and therefore should not be displayed.
     /// </summary>
     /// <param name="words">An array of 2-character words (lowercase, no duplicates)</param>
@@ -207,22 +207,18 @@ public static class SetsAndMapsTester {
     }
 
     /// <summary>
-    ///         This function will read JSON (Javascript Object Notation) data from the 
+    /// This function will read JSON (Javascript Object Notation) data from the 
     /// United States Geological Service (USGS) consisting of earthquake data.
     /// The data will include all earthquakes in the current day.
     /// 
-    /// JSON data is organized into a dictionary.  After reading the data using
-    /// the 'requests' library, this function will print out a list of all
+    /// JSON data is organized into a dictionary. After reading the data using
+    /// the built-in HTTP client library, this function will print out a list of all
     /// earthquake locations ('place' attribute) and magnitudes ('mag' attribute).
     /// Additional information about the format of the JSON data can be found 
     /// at this website:  
     /// 
     /// https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
     /// 
-    /// To install the requests library, run:
-    ///    If using virtual environment: pip install requests
-    ///    If using Windows: py -m pip install requests
-    ///    If using Mac: pip3 install requests
     /// </summary>
     private static void EarthquakeDailySummary() {
         const string uri = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
