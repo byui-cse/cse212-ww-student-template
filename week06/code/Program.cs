@@ -8,5 +8,5 @@
  * GitHub repository, unshared Google Drive folder) is acceptable.
  */
 
-Console.WriteLine("\n======================\nProve 9 - Trees\n======================");
+Console.WriteLine("\n======================\nProve 6 - Trees\n======================");
 TreesTester.Run();
