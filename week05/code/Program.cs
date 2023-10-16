@@ -8,5 +8,5 @@
  * GitHub repository, unshared Google Drive folder) is acceptable.
  */
 
-Console.WriteLine("\n======================\nProve 8 - Recursion\n======================");
+Console.WriteLine("\n======================\nProve 5 - Recursion\n======================");
 RecursionTester.Run();

@@ -8,5 +8,5 @@
  * GitHub repository, unshared Google Drive folder) is acceptable.
  */
 
-Console.WriteLine("\n======================\nProve 7 - Linked Lists\n======================");
+Console.WriteLine("\n======================\nProve 4 - Linked Lists\n======================");
 LinkedListTester.Run();

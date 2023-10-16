@@ -4,7 +4,7 @@ public class BinarySearchTree : IEnumerable<int> {
     private Node? _root;
 
     /// <summary>
-    /// Insert a new node at the front (i.e. the head) of the linked list.
+    /// Insert a new node in the BST.
     /// </summary>
     public void Insert(int value) {
         // Create new node
@@ -54,7 +54,7 @@ public class BinarySearchTree : IEnumerable<int> {
     }
 
     /// <summary>
-    /// Iterate backward through the Linked List
+    /// Iterate backward through the BST.
     /// </summary>
     public IEnumerable Reverse() {
         var numbers = new List<int>();
