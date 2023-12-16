@@ -133,4 +133,14 @@ public class LinkedList : IEnumerable<int> {
     public override string ToString() {
         return "<LinkedList>{" + string.Join(", ", this) + "}";
     }
+
+    // Just for testing.
+    public Boolean HeadAndTailAreNull() {
+        return _head is null && _tail is null;
+    }
+
+    // Just for testing.
+    public Boolean HeadAndTailAreNotNull() {
+        return _head is not null && _tail is not null;
+    }
 }
