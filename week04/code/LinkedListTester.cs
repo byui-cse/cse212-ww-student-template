@@ -12,7 +12,7 @@ public static class LinkedListTester {
         ll.InsertHead(5);
 
         Console.WriteLine(ll.ToString()); // <LinkedList>{5, 4, 3, 2, 2, 2, 1};
-        ll.InsertTail(0);   
+        ll.InsertTail(0);
         ll.InsertTail(-1);
         Console.WriteLine(ll.ToString()); // <LinkedList>{5, 4, 3, 2, 2, 2, 1, 0, -1};
 
