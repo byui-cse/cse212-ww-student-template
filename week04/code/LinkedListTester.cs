@@ -16,11 +16,23 @@ public static class LinkedListTester {
         ll.InsertTail(-1);
         Console.WriteLine(ll.ToString()); // <LinkedList>{5, 4, 3, 2, 2, 2, 1, 0, -1};
 
+        var ll2 = new LinkedList();
+        ll2.InsertTail(1);
+        Console.WriteLine(ll2.HeadAndTailAreNotNull()); // True
+
         Console.WriteLine("\n=========== PROBLEM 2 TESTS ===========");
         ll.RemoveTail();
         Console.WriteLine(ll.ToString()); // <LinkedList>{5, 4, 3, 2, 2, 2, 1, 0}
         ll.RemoveTail();
         Console.WriteLine(ll.ToString()); // <LinkedList>{5, 4, 3, 2, 2, 2, 1}
+
+        var ll3 = new LinkedList();
+        ll3.RemoveTail();
+        Console.WriteLine(ll3.ToString()); // <LinkedList>{}
+        ll3.InsertHead(2);
+        ll3.RemoveTail();
+        Console.WriteLine(ll3.ToString()); // <LinkedList>{}
+        Console.WriteLine(ll3.HeadAndTailAreNull()); // True
 
         Console.WriteLine("\n=========== PROBLEM 3 TESTS ===========");
         ll.InsertAfter(3, 35);
@@ -40,6 +52,14 @@ public static class LinkedListTester {
         Console.WriteLine(ll.ToString()); // <LinkedList>{4, 35, 2, 2, 2}
         ll.Remove(2);
         Console.WriteLine(ll.ToString()); // <LinkedList>{4, 35, 2, 2}
+
+        var ll4 = new LinkedList();
+        ll4.Remove(0);
+        Console.WriteLine(ll4.ToString()); // <LinkedList>{}
+        ll4.InsertHead(2);
+        ll4.Remove(2);
+        Console.WriteLine(ll4.ToString()); // <LinkedList>{}
+        Console.WriteLine(ll4.HeadAndTailAreNull()); // True
 
         Console.WriteLine("\n=========== PROBLEM 4 TESTS ===========");
         ll.Replace(2, 10);
