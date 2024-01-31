@@ -1,14 +1,4 @@
-﻿/*
- * CSE212 
- * (c) BYU-Idaho
- * 04-Prove - Problem 1
- * 
- * It is a violation of BYU-Idaho Honor Code to post or share this code with others or 
- * to post it online.  Storage into a personal and private repository (e.g. private
- * GitHub repository, unshared Google Drive folder) is acceptable.
- *
- */
-public static class TakingTurns {
+﻿public static class TakingTurns {
     public static void Test() {
         // TODO Problem 1 - Run test cases and fix the code to match requirements
         // Test Cases

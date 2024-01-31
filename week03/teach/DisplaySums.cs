@@ -1,14 +1,4 @@
-﻿/*
- * CSE212 
- * (c) BYU-Idaho
- * 05-Teach - Problem 2
- * 
- * It is a violation of BYU-Idaho Honor Code to post or share this code with others or 
- * to post it online.  Storage into a personal and private repository (e.g. private
- * GitHub repository, unshared Google Drive folder) is acceptable.
- *
- */
-public static class DisplaySums {
+﻿public static class DisplaySums {
     public static void Run() {
         DisplaySumPairs(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
         // Should show something like (order does not matter):
