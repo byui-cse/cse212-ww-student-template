@@ -1,15 +1,5 @@
 ﻿using System.Diagnostics;
 
-/*
- * CSE212 
- * (c) BYU-Idaho
- * 02-Prove - Problem 2
- * 
- * It is a violation of BYU-Idaho Honor Code to post or share this code with others or 
- * to post it online.  Storage into a personal and private repository (e.g. private
- * GitHub repository, unshared Google Drive folder) is acceptable.
- *
- */
 public static class Search {
     public static void Run() {
         Console.WriteLine("{0,15}{1,15}{2,15}{3,15}{4,15}", "n", "sort1-count", "sort2-count", "sort1-time",

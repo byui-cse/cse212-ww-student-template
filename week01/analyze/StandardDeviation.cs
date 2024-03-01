@@ -1,14 +1,4 @@
-﻿/*
- * CSE212 
- * (c) BYU-Idaho
- * 02-Teach - Problem 1.2
- * 
- * It is a violation of BYU-Idaho Honor Code to post or share this code with others or 
- * to post it online.  Storage into a personal and private repository (e.g. private
- * GitHub repository, unshared Google Drive folder) is acceptable.
- *
- */
-/// <summary>
+﻿/// <summary>
 /// These 3 functions will (in different ways) calculate the standard
 /// deviation from a list of numbers.  The standard deviation
 /// is defined as the square root of the variance.  The variance is 
