@@ -1,14 +1,4 @@
-﻿/*
- * CSE212 
- * (c) BYU-Idaho
- * 02-Prove - Problem 1.1
- * 
- * It is a violation of BYU-Idaho Honor Code to post or share this code with others or 
- * to post it online.  Storage into a personal and private repository (e.g. private
- * GitHub repository, unshared Google Drive folder) is acceptable.
- *
- */
-public static class Sorting {
+﻿public static class Sorting {
     public static void Run() {
         var numbers = new[] { 3, 2, 1, 6, 4, 9, 8 };
         SortArray(numbers);
