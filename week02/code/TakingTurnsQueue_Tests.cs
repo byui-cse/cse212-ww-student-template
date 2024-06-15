@@ -157,6 +157,9 @@ public class TakingTurnsQueueTests
         {
             Assert.AreEqual("No one in the queue.", e.Message);
         }
+        catch (AssertFailedException) {
+            throw;
+        }
         catch (Exception e)
         {
             Assert.Fail(

@@ -221,6 +221,9 @@ public class MazeTests
         {
             Assert.AreEqual("Can't go that way!", e.Message);
         }
+         catch (AssertFailedException) {
+            throw;
+        }
         catch (Exception e)
         {
             Assert.Fail(
