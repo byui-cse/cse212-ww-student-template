@@ -16,8 +16,7 @@
     public String Dequeue() {
         if (_queue.Count == 0) // Verify the queue is not empty
         {
-            Console.WriteLine("The queue is empty.");
-            return null;
+            throw new InvalidOperationException("The queue is empty.");
         }
 
         // Find the index of the item with the highest priority to remove
