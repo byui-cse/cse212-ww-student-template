@@ -1,7 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // TODO Problem 1 - Run test cases and record any defects the test code finds in the comment above the test method.
-// DO NOT modify the code in the tests in this file. Fix the code to match requirements and make all tests pass. 
+// DO NOT modify the code in the tests in this file, just the comments above the tests. 
+// Fix the code being tested to match requirements and make all tests pass. 
 
 [TestClass]
 public class TakingTurnsQueueTests
@@ -87,8 +88,10 @@ public class TakingTurnsQueueTests
     // Defect(s) Found: 
     public void TestTakingTurnsQueue_ForeverZero()
     {
+        var timTurns = 0;
+
         var bob = new Person("Bob", 2);
-        var tim = new Person("Tim", 0);
+        var tim = new Person("Tim", timTurns);
         var sue = new Person("Sue", 3);
 
         Person[] expectedResult = [bob, tim, sue, bob, tim, sue, tim, sue, tim, tim];
@@ -103,6 +106,10 @@ public class TakingTurnsQueueTests
             var person = players.GetNextPerson();
             Assert.AreEqual(expectedResult[i].Name, person.Name);
         }
+
+        // Verify that the people with infinite turns really do have infinite turns.
+        var infinitePerson = players.GetNextPerson();
+        Assert.AreEqual(timTurns, infinitePerson.Turns, "People with infinite turns should not have their turns parameter modified to a very big number. A very big number is not infinite.");
     }
 
     [TestMethod]
@@ -112,7 +119,8 @@ public class TakingTurnsQueueTests
     // Defect(s) Found: 
     public void TestTakingTurnsQueue_ForeverNegative()
     {
-        var tim = new Person("Tim", -3);
+        var timTurns = -3;
+        var tim = new Person("Tim", timTurns);
         var sue = new Person("Sue", 3);
 
         Person[] expectedResult = [tim, sue, tim, sue, tim, sue, tim, tim, tim, tim];
@@ -126,6 +134,10 @@ public class TakingTurnsQueueTests
             var person = players.GetNextPerson();
             Assert.AreEqual(expectedResult[i].Name, person.Name);
         }
+
+        // Verify that the people with infinite turns really do have infinite turns.
+        var infinitePerson = players.GetNextPerson();
+        Assert.AreEqual(timTurns, infinitePerson.Turns, "People with infinite turns should not have their turns parameter modified to a very big number. A very big number is not infinite.");
     }
 
     [TestMethod]
@@ -151,26 +163,6 @@ public class TakingTurnsQueueTests
                  string.Format("Unexpected exception of type {0} caught: {1}",
                                 e.GetType(), e.Message)
             );
-        }
-    }
-
-    [TestMethod]
-    // Scenario: Create a queue with the following people and turns: Bob (2), Tim (5), Sue (3) and
-    // run until the queue is empty
-    // Expected Result: Bob, Tim, Sue, Bob, Tim, Sue, Tim, Sue, Tim, Tim
-    // Defect(s) Found: 
-    public void TestTakingTurnsQueue_TestNoCheatingInfinite()
-    {
-        var bob = new Person("Bob", -1);
-
-        var players = new TakingTurnsQueue();
-        players.AddPerson(bob.Name, bob.Turns);
-
-        for(int i = 0; i < 1000; ++i)
-        {
-            var person = players.GetNextPerson();
-            Assert.AreEqual(bob.Name, person.Name);
-            Assert.AreEqual(-1, bob.Turns);
         }
     }
 }

@@ -20,7 +20,6 @@ public class TakingTurnsQueue
     /// <param name="turns">Number of turns remaining</param>
     public void AddPerson(string name, int turns)
     {
-        turns = turns <= 0 ? int.MaxValue : turns;
         var person = new Person(name, turns);
         _people.Enqueue(person);
     }
