@@ -11,7 +11,7 @@
 /// If a direction is false, then we can assume there is a wall in that direction.
 /// If a direction is true, then we can proceed.  
 ///
-/// If there is a wall, then display "Can't go that way!".  If there is no wall,
+/// If there is a wall, then throw an InvalidOperationException with the message "Can't go that way!".  If there is no wall,
 /// then the 'currX' and 'currY' values should be changed.
 /// </summary>
 public class Maze {
@@ -56,7 +56,7 @@ public class Maze {
         // FILL IN CODE
     }
 
-    public void ShowStatus() {
-        Console.WriteLine($"Current location (x={_currX}, y={_currY})");
+    public string GetStatus() {
+        return $"Current location (x={_currX}, y={_currY})";
     }
 }
