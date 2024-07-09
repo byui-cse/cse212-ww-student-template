@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 // DO NOT MODIFY THIS FILE
 
 [TestClass]
-public class LinkedListTests
+public class InsertTailTests
 {
     [TestMethod]
-    public void LinkedList_InsertTailEmpty() {
+    public void InsertTail_Empty() {
         var ll = new LinkedList();
 
         Assert.IsTrue(ll.HeadAndTailAreNull());
@@ -16,7 +16,7 @@ public class LinkedListTests
     }
 
     [TestMethod]
-    public void LinkedList_InsertTail() {
+    public void InsertTail_Basic() {
         var ll = new LinkedList();
 
         ll.InsertTail(1);
@@ -34,9 +34,13 @@ public class LinkedListTests
 
         Assert.AreEqual("<LinkedList>{5, 4, 3, 2, 2, 2, 1, 0, -1}", ll.ToString());
     }
+}
 
+[TestClass]
+public class RemoveTailTests
+{
     [TestMethod]
-    public void LinkedList_RemoveTailEmpty() {
+    public void RemoveTail_Empty() {
         var ll = new LinkedList();
 
         ll.RemoveTail();
@@ -45,7 +49,7 @@ public class LinkedListTests
     }
 
     [TestMethod]
-    public void LinkedList_RemoveTailSingle() {
+    public void RemoveTail_Single() {
         var ll = new LinkedList();
 
         ll.InsertHead(1);
@@ -55,7 +59,7 @@ public class LinkedListTests
     }
 
     [TestMethod]
-    public void LinkedList_RemoveTail() {
+    public void RemoveTail_Basic() {
         var ll = new LinkedList();
 
         ll.InsertHead(2);
@@ -71,10 +75,13 @@ public class LinkedListTests
         ll.RemoveTail();
         Assert.AreEqual("<LinkedList>{5, 4, 3, 2}", ll.ToString());
     }
+}
 
-
+[TestClass]
+public class RemoveTests
+{
     [TestMethod]
-    public void LinkedList_RemoveNonExistant() {
+    public void Remove_NonExistant() {
         var ll = new LinkedList();
 
         ll.InsertHead(2);
@@ -93,7 +100,7 @@ public class LinkedListTests
     }
 
     [TestMethod]
-    public void LinkedList_RemoveEmpty() {
+    public void Remove_Empty() {
         var ll = new LinkedList();
         ll.Remove(0);
         Assert.AreEqual("<LinkedList{}", ll.ToString());
@@ -101,7 +108,7 @@ public class LinkedListTests
     }
 
     [TestMethod]
-    public void LinkedList_RemoveSingle() {
+    public void Remove_Single() {
         var ll = new LinkedList();
         ll.InsertHead(2);
         ll.Remove(2);
@@ -110,7 +117,7 @@ public class LinkedListTests
     }
 
     [TestMethod]
-    public void LinkedList_RemoveMultiple() {
+    public void Remove_Multiple() {
         var ll = new LinkedList();
 
         ll.InsertHead(2);
@@ -135,9 +142,13 @@ public class LinkedListTests
         ll.Remove(2);
         Assert.AreEqual("<LinkedList>{5, 4, 35}", ll.ToString());
     }
+}
 
+[TestClass]
+public class ReplaceTests
+{
     [TestMethod]
-    public void LinkedList_ReplaceNonExistant() {
+    public void Replace_NonExistant() {
         var ll = new LinkedList();
 
         ll.InsertHead(2);
@@ -152,7 +163,7 @@ public class LinkedListTests
     }
 
     [TestMethod]
-    public void LinkedList_ReplaceEmpty() {
+    public void Replace_Empty() {
         var ll = new LinkedList();
 
         ll.Replace(-1, 4);
@@ -160,7 +171,7 @@ public class LinkedListTests
     }
 
     [TestMethod]
-    public void LinkedList_ReplaceMultiple() {
+    public void Replace_Multiple() {
         var ll = new LinkedList();
 
         ll.InsertHead(2);
@@ -176,22 +187,26 @@ public class LinkedListTests
         ll.Replace(3, -1);
         Assert.AreEqual("<LinkedList>{5, 4, 4, -1, 4, 4}", ll.ToString());
     }
+}
 
+[TestClass]
+public class ReverseTests
+{
     [TestMethod]
-    public void LinkedList_ReverseEmpty() {
+    public void Reverse_Empty() {
         var ll = new LinkedList();
         Assert.AreEqual("<LinkedList>{}", ll.Reverse().ToString());
     }
 
     [TestMethod]
-    public void LinkedList_ReverseSingle() {
+    public void Reverse_Single() {
         var ll = new LinkedList();
         ll.InsertHead(5);
         Assert.AreEqual("<LinkedList>{5}", ll.Reverse().ToString());
     }
 
     [TestMethod]
-    public void LinkedList_Reverse() {
+    public void Reverse_Basic() {
         var ll = new LinkedList();
         ll.InsertHead(2);
         ll.InsertHead(2);

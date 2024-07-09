@@ -1,3 +1,5 @@
+// DO NOT MODIFY THIS FILE
+
 public class Maze {
     public int Width { get; }
     public int Height { get; }
