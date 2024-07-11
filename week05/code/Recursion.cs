@@ -1,3 +1,5 @@
+using System.Collections;
+
 public static class Recursion {
     /// <summary>
     /// #############
@@ -7,7 +9,7 @@ public static class Recursion {
     /// and return it.  Remember to both express the solution 
     /// in terms of recursive call on a smaller problem and 
     /// to identify a base case (terminating case).  If the value of
-    /// n &lt;= 0, just return 0.   A loop should not be used.
+    /// n <= 0, just return 0.   A loop should not be used.
     /// </summary>
     public static int SumSquaresRecursive(int n) {
         // TODO Start Problem 1
@@ -18,8 +20,8 @@ public static class Recursion {
     /// #############
     /// # Problem 2 #
     /// #############
-    /// Using recursion Print permutations of length
-    /// 'size' from a list of 'letters'.  This function
+    /// Using recursion, insert permutations of length
+    /// 'size' from a list of 'letters' into the results list.  This function
     /// should assume that each letter is unique (i.e. the 
     /// function does not need to find unique permutations).
     ///
@@ -33,7 +35,7 @@ public static class Recursion {
     /// You can assume that the size specified is always valid (between 1 
     /// and the length of the letters list).
     /// </summary>
-    public static void PermutationsChoose(string letters, int size, string word = "") {
+    public static void PermutationsChoose(List<string> results, string letters, int size, string word = "") {
         // TODO Start Problem 2
     }
 
@@ -78,9 +80,6 @@ public static class Recursion {
     /// to update this function to use memoization.  The parameter
     /// 'remember' has already been added as an input parameter to 
     /// the function for you to complete this task.
-    ///
-    /// The last test case is commented out because it will not work
-    /// until the memoization is implemented.
     /// </summary>
     public static decimal CountWaysToClimb(int s, Dictionary<int, decimal>? remember = null) {
         // Base Cases
@@ -108,18 +107,18 @@ public static class Recursion {
     /// to represent 10101 and 10111.  A pattern can have more than one * wildcard.  For example, 
     /// 1**1 would result in 4 different binary strings: 1001, 1011, 1101, and 1111.
     ///	
-    /// Using recursion, display all possible binary strings for a given pattern.  You might find 
+    /// Using recursion, insert all possible binary strings for a given pattern into the results list.  You might find 
     /// some of the string functions like IndexOf and [..X] / [X..] to be useful in solving this problem.
     /// </summary>
-    public static void WildcardBinary(string pattern) {
+    public static void WildcardBinary(string pattern, List<string> results) {
         // TODO Start Problem 4
     }
 
     /// <summary>
-    /// Use recursion to Print all paths that start at (0,0) and end at the
-    /// 'end' square.
+    /// Use recursion to insert all paths that start at (0,0) and end at the
+    /// 'end' square into the results list.
     /// </summary>
-    public static void SolveMaze(Maze maze, int x = 0, int y = 0, List<ValueTuple<int, int>>? currPath = null) {
+    public static void SolveMaze(List<string> results, Maze maze, int x = 0, int y = 0, List<ValueTuple<int, int>>? currPath = null) {
         // If this is the first time running the function, then we need
         // to initialize the currPath list.
         if (currPath == null)
@@ -130,6 +129,6 @@ public static class Recursion {
         // TODO Start Problem 5
         // ADD CODE HERE
 
-        // Console.WriteLine(currPath.AsString()); // Use this to print out your path when you find the solution
+        // results.Add(currPath.AsString()); // Use this to print out your path when you find the solution
     }
 }
