@@ -101,6 +101,6 @@ public class CustomerService {
     /// </summary>
     /// <returns>A string representation of the queue</returns>
     public override string ToString() {
-        return $"[size={_queue.Count} max_size={_maxSize} => " + String.Join(", ", _queue) + "]";
+        return $"[size={_queue.Count} max_size={_maxSize} => " + string.Join(", ", _queue) + "]";
     }
 }

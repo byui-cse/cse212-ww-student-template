@@ -10,7 +10,7 @@ public static class ArraySelectorSolution
 
         var l3 = new[] { 'A', 'A', 'A', 'A', 'A'};
         var l4 = new[] { 'B', 'B', 'B', 'B', 'B'};
-        select = new[] { 1, 2, 1, 2, 1, 2, 1, 2, 1, 2};
+        select = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2];
         var charResult = ListSelector(l3, l4, select);
         Console.WriteLine("<char[]>{" + string.Join(", ", charResult) + "}"); // <char[]>{A, B, A, B, A, B, A, B, A, B}
     }

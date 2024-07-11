@@ -164,8 +164,8 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build-week06-code",
-            "program": "${workspaceFolder}/week06/code/bin/Debug/net8.0/code.dll",
-            "args": [],
+            "program": "dotnet",
+            "args": ["test", "-l:\"console;verbosity=normal\""],
             "cwd": "${workspaceFolder}/week06/code",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
@@ -184,6 +184,5 @@
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
-
     ]
 }

@@ -9,7 +9,7 @@ public class LinkedList : IEnumerable<int> {
     /// </summary>
     public void InsertHead(int value) {
         // Create new node
-        Node newNode = new Node(value);
+        Node newNode = new(value);
         // If the list is empty, then point both head and tail to the new node.
         if (_head is null) {
             _head = newNode;

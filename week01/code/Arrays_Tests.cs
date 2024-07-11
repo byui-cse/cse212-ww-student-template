@@ -33,7 +33,7 @@ public class RotateListRightTests
     [TestMethod]
     public void TestRotateListRight_Rotate1()
     {
-        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        List<int> numbers = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         Arrays.RotateListRight(numbers, 1);
         CollectionAssert.AreEqual(new List<int> { 9, 1, 2, 3, 4, 5, 6, 7, 8 }, numbers);
     }
@@ -41,7 +41,7 @@ public class RotateListRightTests
     [TestMethod]
     public void TestRotateListRight_Rotate5()
     {
-        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        List<int> numbers = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         Arrays.RotateListRight(numbers, 5);
         CollectionAssert.AreEqual(new List<int> { 5, 6, 7, 8, 9, 1, 2, 3, 4 }, numbers);
     }
@@ -49,7 +49,7 @@ public class RotateListRightTests
     [TestMethod]
     public void TestRotateListRight_Rotate3()
     {
-        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        List<int> numbers = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         Arrays.RotateListRight(numbers, 3);
         CollectionAssert.AreEqual(new List<int> { 7, 8, 9, 1, 2, 3, 4, 5, 6 }, numbers);
     }
@@ -57,7 +57,7 @@ public class RotateListRightTests
     [TestMethod]
     public void TestRotateListRight_Rotate9()
     {
-        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        List<int> numbers = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         Arrays.RotateListRight(numbers, 9);
         CollectionAssert.AreEqual(new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, numbers);
     }

@@ -192,7 +192,7 @@ public class SolveMazeTests
     public void SolveMaze_Small()
     {
         var results = new List<string>();
-        Maze smallMaze = new Maze(3, 3, new[] { 1, 1, 1, 1, 0, 1, 1, 1, 2 });
+        Maze smallMaze = new(3, 3, [1, 1, 1, 1, 0, 1, 1, 1, 2]);
         Recursion.SolveMaze(results, smallMaze);
 
         results.Sort();
@@ -208,7 +208,7 @@ public class SolveMazeTests
     {
         var results = new List<string>();
         Maze bigMaze = new(20, 20,
-            new[] {
+            [
                 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1,
                 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1,
@@ -229,7 +229,7 @@ public class SolveMazeTests
                 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0,
                 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,
                 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 2
-            });
+            ]);
 
         Recursion.SolveMaze(results, bigMaze);
 

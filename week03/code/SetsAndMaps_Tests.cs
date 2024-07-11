@@ -7,7 +7,7 @@ public class FindPairsTests
 {
     [TestMethod]
     public void FindPairs_TwoPairs() {
-        var actual = SetsAndMaps.FindPairs(new[] { "am", "at", "ma", "if", "fi" });
+        var actual = SetsAndMaps.FindPairs(["am", "at", "ma", "if", "fi"]);
         var expected = new[] {"ma & am", "fi & if"};
 
         Assert.AreEqual(expected.Length, actual.Length);
@@ -16,7 +16,7 @@ public class FindPairsTests
 
     [TestMethod]
     public void FindPairs_OnePair() {
-        var actual = SetsAndMaps.FindPairs(new[] { "ab", "bc", "cd", "de", "ba" });
+        var actual = SetsAndMaps.FindPairs(["ab", "bc", "cd", "de", "ba"]);
         var expected = new[] {"ba & ab"};
 
         Assert.AreEqual(expected.Length, actual.Length);
@@ -25,7 +25,7 @@ public class FindPairsTests
 
     [TestMethod]
     public void FindPairs_SameChar() {
-         var actual = SetsAndMaps.FindPairs(new[] {  "ab", "aa", "ba" });
+         var actual = SetsAndMaps.FindPairs(["ab", "aa", "ba"]);
         var expected = new[] {"ba & ab"};
 
         Assert.AreEqual(expected.Length, actual.Length);
@@ -34,7 +34,7 @@ public class FindPairsTests
 
     [TestMethod]
     public void FindPairs_ThreePairs() {
-         var actual = SetsAndMaps.FindPairs(new[] { "ab", "ba", "ac", "ad", "da", "ca" });
+         var actual = SetsAndMaps.FindPairs(["ab", "ba", "ac", "ad", "da", "ca"]);
         var expected = new[] {"ba & ab", "da & ad", "ca & ac"};
 
         Assert.AreEqual(expected.Length, actual.Length);
@@ -43,7 +43,7 @@ public class FindPairsTests
 
     [TestMethod]
     public void FindPairs_ThreePairsNumbers() {
-        var actual = SetsAndMaps.FindPairs(new[] { "23", "84", "49", "13", "32", "46", "91", "99", "94", "31", "57", "14" });
+        var actual = SetsAndMaps.FindPairs(["23", "84", "49", "13", "32", "46", "91", "99", "94", "31", "57", "14"]);
         var expected = new[] {"32 & 23", "94 & 49", "31 & 13"};
 
         Assert.AreEqual(expected.Length, actual.Length);
@@ -52,7 +52,7 @@ public class FindPairsTests
 
     [TestMethod]
     public void FindPairs_NoPairs() {
-        var actual = SetsAndMaps.FindPairs(new[] { "ab", "ac" });
+        var actual = SetsAndMaps.FindPairs(["ab", "ac"]);
         var expected = new string[0];
 
         Assert.AreEqual(expected.Length, actual.Length);
@@ -68,8 +68,8 @@ public class FindPairsTests
         var input = new List<string>(count);
         for (char a = (char)0x0; a <= 0xffff; ++a) {
             for (char b = (char)0x0; b <= 0xffff; ++b) {
-                char[] chars = {'a', 'b'};
-                string s = new string(chars);
+                char[] chars = ['a', 'b'];
+                string s = new(chars);
                 input.Add(s);
 
                 done = input.Count >= count;

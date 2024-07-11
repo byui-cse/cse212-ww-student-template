@@ -8,7 +8,7 @@ public class BinarySearchTree : IEnumerable<int> {
     /// </summary>
     public void Insert(int value) {
         // Create new node
-        Node newNode = new Node(value);
+        Node newNode = new(value);
         // If the list is empty, then point both head and tail to the new node.
         if (_root is null)
             _root = newNode;
