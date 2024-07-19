@@ -1,6 +1,6 @@
 /// <summary>
-/// This queue is circular.  When people are added via add_person, then they are added to the 
-/// back of the queue (per FIFO rules).  When get_next_person is called, the next person
+/// This queue is circular.  When people are added via AddPerson, then they are added to the 
+/// back of the queue (per FIFO rules).  When GetNextPerson is called, the next person
 /// in the queue is displayed and then they are placed back into the back of the queue.  Thus,
 /// each person stays in the queue and is given turns.  When a person is added to the queue, 
 /// a turns parameter is provided to identify how many turns they will be given.  If the turns is 0 or
