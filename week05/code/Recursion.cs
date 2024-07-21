@@ -129,6 +129,6 @@ public static class Recursion {
         // TODO Start Problem 5
         // ADD CODE HERE
 
-        // results.Add(currPath.AsString()); // Use this to print out your path when you find the solution
+        // results.Add(currPath.AsString()); // Use this to add your path to the results array keeping track of complete maze solutions when you find the solution.
     }
 }
