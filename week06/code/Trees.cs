@@ -1,4 +1,5 @@
-public static class Trees {
+public static class Trees
+{
     /// <summary>
     /// Given a sorted list (sorted_list), create a balanced BST.  If the values in the
     /// sortedNumbers were inserted in order from left to right into the BST, then it
@@ -8,7 +9,8 @@ public static class Trees {
     /// a range (first to last) to consider.  For the first call, the full range of 0 to
     /// Length-1 used.
     /// </summary>
-    public static BinarySearchTree CreateTreeFromSortedList(int[] sortedNumbers) {
+    public static BinarySearchTree CreateTreeFromSortedList(int[] sortedNumbers)
+    {
         var bst = new BinarySearchTree(); // Create an empty BST to start with 
         InsertMiddle(sortedNumbers, 0, sortedNumbers.Length - 1, bst);
         return bst;
@@ -44,7 +46,8 @@ public static class Trees {
     /// <param name="first">the first index in the sortedNumbers to insert</param>
     /// <param name="last">the last index in the sortedNumbers to insert</param>
     /// <param name="bst">the BinarySearchTree in which to insert the values</param>
-    private static void InsertMiddle(int[] sortedNumbers, int first, int last, BinarySearchTree bst) {
+    private static void InsertMiddle(int[] sortedNumbers, int first, int last, BinarySearchTree bst)
+    {
         // TODO Start Problem 5
     }
 }

@@ -6,52 +6,58 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 public class FindPairsTests
 {
     [TestMethod]
-    public void FindPairs_TwoPairs() {
+    public void FindPairs_TwoPairs()
+    {
         var actual = SetsAndMaps.FindPairs(["am", "at", "ma", "if", "fi"]);
-        var expected = new[] {"ma & am", "fi & if"};
+        var expected = new[] { "ma & am", "fi & if" };
 
         Assert.AreEqual(expected.Length, actual.Length);
         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
     }
 
     [TestMethod]
-    public void FindPairs_OnePair() {
+    public void FindPairs_OnePair()
+    {
         var actual = SetsAndMaps.FindPairs(["ab", "bc", "cd", "de", "ba"]);
-        var expected = new[] {"ba & ab"};
+        var expected = new[] { "ba & ab" };
 
         Assert.AreEqual(expected.Length, actual.Length);
         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
     }
 
     [TestMethod]
-    public void FindPairs_SameChar() {
-         var actual = SetsAndMaps.FindPairs(["ab", "aa", "ba"]);
-        var expected = new[] {"ba & ab"};
+    public void FindPairs_SameChar()
+    {
+        var actual = SetsAndMaps.FindPairs(["ab", "aa", "ba"]);
+        var expected = new[] { "ba & ab" };
 
         Assert.AreEqual(expected.Length, actual.Length);
         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
     }
 
     [TestMethod]
-    public void FindPairs_ThreePairs() {
-         var actual = SetsAndMaps.FindPairs(["ab", "ba", "ac", "ad", "da", "ca"]);
-        var expected = new[] {"ba & ab", "da & ad", "ca & ac"};
+    public void FindPairs_ThreePairs()
+    {
+        var actual = SetsAndMaps.FindPairs(["ab", "ba", "ac", "ad", "da", "ca"]);
+        var expected = new[] { "ba & ab", "da & ad", "ca & ac" };
 
         Assert.AreEqual(expected.Length, actual.Length);
         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
     }
 
     [TestMethod]
-    public void FindPairs_ThreePairsNumbers() {
+    public void FindPairs_ThreePairsNumbers()
+    {
         var actual = SetsAndMaps.FindPairs(["23", "84", "49", "13", "32", "46", "91", "99", "94", "31", "57", "14"]);
-        var expected = new[] {"32 & 23", "94 & 49", "31 & 13"};
+        var expected = new[] { "32 & 23", "94 & 49", "31 & 13" };
 
         Assert.AreEqual(expected.Length, actual.Length);
         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
     }
 
     [TestMethod]
-    public void FindPairs_NoPairs() {
+    public void FindPairs_NoPairs()
+    {
         var actual = SetsAndMaps.FindPairs(["ab", "ac"]);
         var expected = new string[0];
 
@@ -62,37 +68,45 @@ public class FindPairsTests
     // If this test takes longer than 5 seconds to run, your code is too inefficient.
     //  On my machine, this executes in ~200 ms with an efficient implementation.
     [TestMethod, Timeout(5000)]
-    public void FindPairs_NoPairs_Efficiency() {
+    public void FindPairs_NoPairs_Efficiency()
+    {
         var count = 1_000_000;
         bool done = false;
         var input = new List<string>(count);
-        for (char a = (char)0x0; a <= 0xffff; ++a) {
-            for (char b = (char)0x0; b <= 0xffff; ++b) {
+        for (char a = (char)0x0; a <= 0xffff; ++a)
+        {
+            for (char b = (char)0x0; b <= 0xffff; ++b)
+            {
                 char[] chars = ['a', 'b'];
                 string s = new(chars);
                 input.Add(s);
 
                 done = input.Count >= count;
-                if (done) {
+                if (done)
+                {
                     break;
                 }
             }
 
-            if (done) {
+            if (done)
+            {
                 break;
             }
         }
-        
+
         var actual = SetsAndMaps.FindPairs(input.ToArray());
         Assert.AreEqual(0, actual.Length);
     }
 
-    private string Canonicalize(string[] array) {
-        if (array.Length == 0) {
+    private string Canonicalize(string[] array)
+    {
+        if (array.Length == 0)
+        {
             return "";
         }
 
-        var canonicalString = array.Select(item => {
+        var canonicalString = array.Select(item =>
+        {
             var parts = item.Split('&');
             return parts
                 .Select(part => part.Trim())
@@ -110,7 +124,8 @@ public class FindPairsTests
 public class SummarizeDegreesTests
 {
     [TestMethod]
-    public void SummarizeCensusDegrees() {
+    public void SummarizeCensusDegrees()
+    {
         var result = SetsAndMaps.SummarizeDegrees("../../../census.txt");
         var expected = new Dictionary<string, int> {
             {"Bachelors", 5355},
@@ -139,7 +154,8 @@ public class SummarizeDegreesTests
 public class IsAnagramTests
 {
     [TestMethod]
-    public void IsAnagram_BasicCases() {
+    public void IsAnagram_BasicCases()
+    {
         Assert.IsTrue(SetsAndMaps.IsAnagram("CAT", "ACT"));
         Assert.IsFalse(SetsAndMaps.IsAnagram("DOG", "GOOD"));
         Assert.IsFalse(SetsAndMaps.IsAnagram("AABBCCDD", "ABCD"));
@@ -148,17 +164,20 @@ public class IsAnagramTests
     }
 
     [TestMethod]
-    public void IsAnagram_IgnoresCases() {
+    public void IsAnagram_IgnoresCases()
+    {
         Assert.IsTrue(SetsAndMaps.IsAnagram("Ab", "Ba"));
     }
 
     [TestMethod]
-    public void IsAnagram_IgnoresSpaces() {
+    public void IsAnagram_IgnoresSpaces()
+    {
         Assert.IsTrue(SetsAndMaps.IsAnagram("tom marvolo riddle", "i am lord voldemort"));
     }
 
     [TestMethod]
-    public void IsAnagram_IgnoresSpacesAndCases() {
+    public void IsAnagram_IgnoresSpacesAndCases()
+    {
         Assert.IsTrue(SetsAndMaps.IsAnagram("A Decimal Point", "Im a Dot in Place"));
         Assert.IsTrue(SetsAndMaps.IsAnagram("Eleven plus Two", "Twelve Plus One"));
         Assert.IsFalse(SetsAndMaps.IsAnagram("Eleven plus One", "Twelve Plus One"));
@@ -167,13 +186,15 @@ public class IsAnagramTests
     // If this test takes longer than 5 seconds to run, your code is too inefficient.
     //  On my machine, this executes in ~1 second with an efficient implementation.
     [TestMethod, Timeout(5000)]
-    public void IsAnagram_Efficiency() {
+    public void IsAnagram_Efficiency()
+    {
         var rand = new Random();
         var length = 30_000_000;
         var a_array = new char[length];
         var b_array = new char[length];
 
-        for (int i = 0; i < length; ++i) {
+        for (int i = 0; i < length; ++i)
+        {
             a_array[i] = (char)rand.Next(256);
             b_array[i] = (char)rand.Next(256);
         }
@@ -186,7 +207,8 @@ public class IsAnagramTests
 public class MazeTests
 {
     [TestMethod]
-    public void Maze_Basic() {
+    public void Maze_Basic()
+    {
         Dictionary<ValueTuple<int, int>, bool[]> map = SetupMazeMap();
         var maze = new Maze(map);
         Assert.AreEqual("Current location (x=1, y=1)", maze.GetStatus());
@@ -211,7 +233,8 @@ public class MazeTests
         Assert.AreEqual("Current location (x=6, y=6)", maze.GetStatus());
     }
 
-    private void AssertThrowsInvalidOperationException(Action action) {
+    private void AssertThrowsInvalidOperationException(Action action)
+    {
         try
         {
             action();
@@ -221,7 +244,8 @@ public class MazeTests
         {
             Assert.AreEqual("Can't go that way!", e.Message);
         }
-         catch (AssertFailedException) {
+        catch (AssertFailedException)
+        {
             throw;
         }
         catch (Exception e)
@@ -233,7 +257,8 @@ public class MazeTests
         }
     }
 
-    private static Dictionary<ValueTuple<int, int>, bool[]> SetupMazeMap() {
+    private static Dictionary<ValueTuple<int, int>, bool[]> SetupMazeMap()
+    {
         Dictionary<ValueTuple<int, int>, bool[]> map = new() {
             { (1, 1), new[] { false, true, false, true } },
             { (1, 2), new[] { false, true, true, false } },
@@ -280,12 +305,14 @@ public class MazeTests
 public class EarthquakeDailySummaryTests
 {
     [TestMethod]
-    public void EarthquakeDailySummary_Basic() {
+    public void EarthquakeDailySummary_Basic()
+    {
         var result = SetsAndMaps.EarthquakeDailySummary();
         Assert.IsTrue(result.Length > 5, "Too few earthquakes");
 
-        foreach (string s in result) {
-            Assert.IsTrue(s.Contains("Mag"), "String must contain a magnitude");
+        foreach (string s in result)
+        {
+            Assert.IsTrue(s.Contains(" - Mag "), "String must contain a magnitude");
         }
     }
 }

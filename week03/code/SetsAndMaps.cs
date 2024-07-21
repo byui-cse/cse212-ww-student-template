@@ -1,6 +1,7 @@
 using System.Text.Json;
 
-public static class SetsAndMaps {
+public static class SetsAndMaps
+{
     /// <summary>
     /// The words parameter contains a list of two character 
     /// words (lower case, no duplicates). Using sets, find an O(n) 
@@ -18,7 +19,8 @@ public static class SetsAndMaps {
     /// that there were no duplicates) and therefore should not be returned.
     /// </summary>
     /// <param name="words">An array of 2-character words (lowercase, no duplicates)</param>
-    public static string[] FindPairs(string[] words) {
+    public static string[] FindPairs(string[] words)
+    {
         // TODO Problem 1 - ADD YOUR CODE HERE
         return [];
     }
@@ -34,9 +36,11 @@ public static class SetsAndMaps {
     /// </summary>
     /// <param name="filename">The name of the file to read</param>
     /// <returns>fixed array of divisors</returns>
-    public static Dictionary<string, int> SummarizeDegrees(string filename) {
+    public static Dictionary<string, int> SummarizeDegrees(string filename)
+    {
         var degrees = new Dictionary<string, int>();
-        foreach (var line in File.ReadLines(filename)) {
+        foreach (var line in File.ReadLines(filename))
+        {
             var fields = line.Split(",");
             // TODO Problem 2 - ADD YOUR CODE HERE
         }
@@ -60,10 +64,11 @@ public static class SetsAndMaps {
     /// Reminder: You can access a letter by index in a string by 
     /// using the [] notation.
     /// </summary>
-    public static bool IsAnagram(string word1, string word2) {
+    public static bool IsAnagram(string word1, string word2)
+    {
         // TODO Problem 3 - ADD YOUR CODE HERE
         return false;
-    } 
+    }
 
     /// <summary>
     /// This function will read JSON (Javascript Object Notation) data from the 
@@ -79,7 +84,8 @@ public static class SetsAndMaps {
     /// https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
     /// 
     /// </summary>
-    public static string[] EarthquakeDailySummary() {
+    public static string[] EarthquakeDailySummary()
+    {
         const string uri = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson";
         using var client = new HttpClient();
         using var getRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
