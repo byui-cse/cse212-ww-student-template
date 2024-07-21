@@ -29,7 +29,7 @@ public static class Recursion {
     /// using the formula: len(letters)! / (len(letters) - size)!
     ///
     /// For example, if letters was [A,B,C] and size was 2 then
-    /// the following would display: AB, AC, BA, BC, CA, CB (might be in 
+    /// the following would the contents of the results array after the function ran: AB, AC, BA, BC, CA, CB (might be in 
     /// a different order).
     ///
     /// You can assume that the size specified is always valid (between 1 

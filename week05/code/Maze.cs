@@ -39,9 +39,9 @@ public class Maze {
     /// to the path, make sure that you add the tuple to the list so that the
     /// 'IsValidMove' function works properly.
     /// 
-    /// The goal is to implement the 'SolveMaze' function to display
+    /// The goal is to implement the 'SolveMaze' function to return
     /// all paths to the end square using recursion.  When you find a path, 
-    /// then displaying will be as simple as 'Console.WriteLine(currPath.AsString()'.
+    /// then adding it to the return value list will be as simple as 'results.Add(currPath.AsString())'.
     /// </summary>
     /// <summary>
     /// Helper function to determine if the (x,y) position is at 

@@ -4,21 +4,22 @@ public static class SetsAndMaps {
     /// <summary>
     /// The words parameter contains a list of two character 
     /// words (lower case, no duplicates). Using sets, find an O(n) 
-    /// solution for displaying all symmetric pairs of words.  
+    /// solution for returning all symmetric pairs of words.  
     ///
     /// For example, if words was: [am, at, ma, if, fi], we would return :
     ///
     /// ["am & ma", "if & fi"]
     ///
     /// The order of the array does not matter, nor does the order of the specific words in each string in the array.
-    /// at would not be displayed because ta is not in the list of words.
+    /// at would not be returned because ta is not in the list of words.
     ///
     /// As a special case, if the letters are the same (example: 'aa') then
     /// it would not match anything else (remember the assumption above
-    /// that there were no duplicates) and therefore should not be displayed.
+    /// that there were no duplicates) and therefore should not be returned.
     /// </summary>
     /// <param name="words">An array of 2-character words (lowercase, no duplicates)</param>
     public static string[] FindPairs(string[] words) {
+        // TODO Problem 1 - ADD YOUR CODE HERE
         return [];
     }
 
@@ -33,14 +34,11 @@ public static class SetsAndMaps {
     /// </summary>
     /// <param name="filename">The name of the file to read</param>
     /// <returns>fixed array of divisors</returns>
-    /// #############
-    /// # Problem 2 #
-    /// #############
     public static Dictionary<string, int> SummarizeDegrees(string filename) {
         var degrees = new Dictionary<string, int>();
         foreach (var line in File.ReadLines(filename)) {
             var fields = line.Split(",");
-            // Todo Problem 2 - ADD YOUR CODE HERE
+            // TODO Problem 2 - ADD YOUR CODE HERE
         }
 
         return degrees;
@@ -62,11 +60,8 @@ public static class SetsAndMaps {
     /// Reminder: You can access a letter by index in a string by 
     /// using the [] notation.
     /// </summary>
-    /// #############
-    /// # Problem 3 #
-    /// #############
     public static bool IsAnagram(string word1, string word2) {
-        // Todo Problem 3 - ADD YOUR CODE HERE
+        // TODO Problem 3 - ADD YOUR CODE HERE
         return false;
     } 
 
@@ -95,7 +90,7 @@ public static class SetsAndMaps {
 
         var featureCollection = JsonSerializer.Deserialize<FeatureCollection>(json, options);
 
-        // TODO:
+        // TODO Problem 5:
         // 1. Add code in FeatureCollection.cs to describe the JSON using classes and properties 
         // on those classes so that the call to Deserialize above works properly.
         // 2. Add code below to print out each place a earthquake has happened today and its magitude.

@@ -18,7 +18,7 @@ public static class Divisors {
     /// <returns>List of divisors</returns>
     private static List<int> FindDivisors(int number) {
         List<int> results = new();
-        // Todo problem 1
+        // TODO problem 1
         return results;
     }
 }
