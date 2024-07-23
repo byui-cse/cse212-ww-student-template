@@ -110,7 +110,7 @@ public class RemoveTests
     {
         var ll = new LinkedList();
         ll.Remove(0);
-        Assert.AreEqual("<LinkedList{}", ll.ToString());
+        Assert.AreEqual("<LinkedList>{}", ll.ToString());
         Assert.IsTrue(ll.HeadAndTailAreNull());
     }
 
@@ -120,7 +120,7 @@ public class RemoveTests
         var ll = new LinkedList();
         ll.InsertHead(2);
         ll.Remove(2);
-        Assert.AreEqual("<LinkedList{}", ll.ToString());
+        Assert.AreEqual("<LinkedList>{}", ll.ToString());
         Assert.IsTrue(ll.HeadAndTailAreNull());
     }
 
