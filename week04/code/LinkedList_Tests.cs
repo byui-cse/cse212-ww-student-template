@@ -208,7 +208,7 @@ public class ReverseTests
     public void Reverse_Empty()
     {
         var ll = new LinkedList();
-        Assert.AreEqual("<LinkedList>{}", ll.Reverse().ToString());
+        Assert.AreEqual("<IEnumerable>{}", ll.Reverse().AsString());
     }
 
     [TestMethod]
@@ -216,7 +216,7 @@ public class ReverseTests
     {
         var ll = new LinkedList();
         ll.InsertHead(5);
-        Assert.AreEqual("<LinkedList>{5}", ll.Reverse().ToString());
+        Assert.AreEqual("<IEnumerable>{5}", ll.Reverse().AsString());
     }
 
     [TestMethod]
@@ -229,6 +229,6 @@ public class ReverseTests
         ll.InsertHead(4);
         ll.InsertHead(2);
         ll.InsertHead(5);
-        Assert.AreEqual("<LinkedList>{2, 2, 3, 4, 2, 5}", ll.Reverse().ToString());
+        Assert.AreEqual("<IEnumerable>{2, 2, 3, 4, 2, 5}", ll.Reverse().AsString());
     }
 }
