@@ -21,7 +21,7 @@ public class TreeInsertTests
         tree.Insert(10);
         tree.Insert(1);
         tree.Insert(6);
-        Assert.AreEqual("1, 3, 4, 5, 6, 7, 10", tree.ToString());
+        Assert.AreEqual("<Bst>{1, 3, 4, 5, 6, 7, 10}", tree.ToString());
     }
 }
 
@@ -63,7 +63,7 @@ public class TreeReverseTests
         tree.Insert(1);
         tree.Insert(6);
 
-        Assert.AreEqual("10, 7, 6, 5, 4, 3, 1", string.Join(", ", tree.Reverse()));
+        Assert.AreEqual("<IEnumerable>{10, 7, 6, 5, 4, 3, 1}", string.Join(", ", tree.Reverse().AsString()));
     }
 }
 
@@ -96,7 +96,7 @@ public class CreateTreeFromSortedListTests
     public void CreateTreeFromSortedList_CountBy10s()
     {
         var tree = Trees.CreateTreeFromSortedList([10, 20, 30, 40, 50, 60]);
-        Assert.AreEqual("10, 20, 30, 40, 50, 60", tree.ToString());
+        Assert.AreEqual("<Bst>{10, 20, 30, 40, 50, 60}", tree.ToString());
         Assert.AreEqual(3, tree.GetHeight());
     }
 
@@ -104,7 +104,7 @@ public class CreateTreeFromSortedListTests
     public void CreateTreeFromSortedList_127Nodes()
     {
         var tree = Trees.CreateTreeFromSortedList(Enumerable.Range(0, 127).ToArray()); // 2^7 - 1 nodes
-        Assert.AreEqual(string.Join(", ", Enumerable.Range(0, 127)), tree.ToString());
+        Assert.AreEqual("<Bst>{" + string.Join(", ", Enumerable.Range(0, 127)) + "}", tree.ToString());
         Assert.AreEqual(7, tree.GetHeight()); // Any higher and its not balanced.
     }
 
@@ -112,7 +112,7 @@ public class CreateTreeFromSortedListTests
     public void CreateTreeFromSortedList_128Nodes()
     {
         var tree = Trees.CreateTreeFromSortedList(Enumerable.Range(0, 128).ToArray()); // 2^7 nodes
-        Assert.AreEqual(string.Join(", ", Enumerable.Range(0, 128)), tree.ToString());
+        Assert.AreEqual("<Bst>{" + string.Join(", ", Enumerable.Range(0, 128)) + "}", tree.ToString());
         Assert.AreEqual(8, tree.GetHeight()); // Any higher and its not balanced.
     }
 
@@ -120,7 +120,7 @@ public class CreateTreeFromSortedListTests
     public void CreateTreeFromSortedList_Single()
     {
         var tree = Trees.CreateTreeFromSortedList([42]);
-        Assert.AreEqual("42", tree.ToString());
+        Assert.AreEqual("<Bst>{42}", tree.ToString());
         Assert.AreEqual(1, tree.GetHeight());
     }
 
@@ -128,7 +128,7 @@ public class CreateTreeFromSortedListTests
     public void CreateTreeFromSortedList_Empty()
     {
         var tree = Trees.CreateTreeFromSortedList([]);
-        Assert.AreEqual("", tree.ToString());
+        Assert.AreEqual("<Bst>{}", tree.ToString());
         Assert.AreEqual(0, tree.GetHeight());
     }
 }

@@ -98,3 +98,9 @@ public class BinarySearchTree : IEnumerable<int>
         return "<Bst>{" + string.Join(", ", this) + "}";
     }
 }
+
+public static class IntArrayExtensionMethods {
+    public static string AsString(this IEnumerable array) {
+        return "<IEnumerable>{" + string.Join(", ", array.Cast<int>()) + "}";
+    }
+}
