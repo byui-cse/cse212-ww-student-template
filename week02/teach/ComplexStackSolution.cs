@@ -1,13 +1,11 @@
-﻿namespace teach_03; 
-
-public static class ComplexStackSolution {
+﻿public static class ComplexStackSolution {
     public static void Main() {
-        // True (passes on line 46 ... stack was empty at the end)
+        // True (stack was empty at the end)
         Console.WriteLine(CheckBraces("(a == 3 or (b == 5 and c == 6))"));
-        //  False ..wrong opening square bracket (fails on line 38 ... stack had only '(' in it before it was popped and compared with ']')
+        // False ...wrong opening square bracket (stack had only '(' in it before it was popped and compared with ']')
         //                          here -------\/
         Console.WriteLine(CheckBraces("(students]i].Grade > 80 and students[i].Grade < 90"));
-        // False .... missing closing ')' (fails on line 46 ... stack had an extra '(' in it at the end when it was supposed to be empty
+        // False ....missing closing ')' (stack had an extra '(' in it at the end when it was supposed to be empty
         //                 here -------\/
         Console.WriteLine(CheckBraces("(robot[id + 1].Execute(.Pass() || (!robot[id * (2 + i)].Alive && stormy) || (robot[id - 1].Alive && lavaFlowing))"));
     }

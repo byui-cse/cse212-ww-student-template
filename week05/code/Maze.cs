@@ -1,10 +1,14 @@
-public class Maze {
+// DO NOT MODIFY THIS FILE
+
+public class Maze
+{
     public int Width { get; }
     public int Height { get; }
 
     public readonly int[] Data;
 
-    public Maze(int width, int height, int[] data) {
+    public Maze(int width, int height, int[] data)
+    {
         this.Width = width;
         this.Height = height;
         this.Data = data;
@@ -26,26 +30,27 @@ public class Maze {
     /// See the Prove instructions for graphical representations of
     /// the 2 test mazes defined below.
     /// 
-    /// The 'is_end_maze' and the 'is_valid_move' functions are
+    /// The 'IsEnd' and the 'IsValidMove' functions are
     /// already written for you.  These functions assume that the first
     /// square in the maze is (0,0).  These functions also assume
     /// that you can't leave the boundaries of the maze and that you 
     /// can't visit the same square in the same path (no circles).
     /// 
-    /// The 'curr_path' variable is a list of (x,y) tuples that 
+    /// The 'currPath' variable is a list of (x,y) tuples that 
     /// represent the path we are currently on.  If you add a new position
     /// to the path, make sure that you add the tuple to the list so that the
-    /// 'is_valid_move' function works properly.
+    /// 'IsValidMove' function works properly.
     /// 
-    /// The goal is to implement the 'solve_maze' function to display
+    /// The goal is to implement the 'SolveMaze' function to return
     /// all paths to the end square using recursion.  When you find a path, 
-    /// then displaying will be as simple as 'Print(curr_path)'.
+    /// then adding it to the return value list will be as simple as 'results.Add(currPath.AsString())'.
     /// </summary>
     /// <summary>
     /// Helper function to determine if the (x,y) position is at 
     /// the end of the maze.
     /// </summary>
-    public bool IsEnd(int x, int y) {
+    public bool IsEnd(int x, int y)
+    {
         return Data[y * Height + x] == 2;
     }
 
@@ -55,7 +60,8 @@ public class Maze {
     /// place to move given the size of the maze, the content of the maze,
     /// and the current path already traversed.
     /// </summary>
-    public bool IsValidMove(List<ValueTuple<int, int>> currPath, int x, int y) {
+    public bool IsValidMove(List<ValueTuple<int, int>> currPath, int x, int y)
+    {
         // Can't go outside of the maze boundary (assume maze is a square)
         if (x > Width - 1 || x < 0)
             return false;

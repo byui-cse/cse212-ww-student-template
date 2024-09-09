@@ -2,7 +2,7 @@
 {
     public static void Run()
     {
-        DisplaySumPairs(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });  
+        DisplaySumPairs([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);  
         // Should show something like (order does not matter):
         // 6 4
         // 7 3
@@ -10,14 +10,14 @@
         // 9 1 
 
         Console.WriteLine("------------");
-        DisplaySumPairs(new[] { -20, -15, -10, -5, 0, 5, 10, 15, 20 });  
+        DisplaySumPairs([-20, -15, -10, -5, 0, 5, 10, 15, 20]);  
         // Should show something like (order does not matter):
         // 10 0
         // 15 -5
         // 20 -10
 
         Console.WriteLine("------------");
-        DisplaySumPairs(new[] { 5, 11, 2, -4, 6, 8, -1 });
+        DisplaySumPairs([5, 11, 2, -4, 6, 8, -1]);
         // Should show something like (order does not matter):
         // 8 2
         // -1 11
