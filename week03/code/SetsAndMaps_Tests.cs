@@ -184,22 +184,23 @@ public class IsAnagramTests
     }
 
     // If this test takes longer than 5 seconds to run, your code is too inefficient.
-    //  On my machine, this executes in ~1 second with an efficient implementation.
+    //  On my machine, this executes in ~3 seconds with an efficient implementation.
     [TestMethod, Timeout(5000)]
     public void IsAnagram_Efficiency()
     {
         var rand = new Random();
-        var length = 30_000_000;
+        var length = 60_000_000;
         var a_array = new char[length];
         var b_array = new char[length];
 
         for (int i = 0; i < length; ++i)
         {
-            a_array[i] = (char)rand.Next(256);
-            b_array[i] = (char)rand.Next(256);
+            char c = (char)rand.Next(256);
+            a_array[i] = c;
+            b_array[i] = c;
         }
 
-        Assert.IsFalse(SetsAndMaps.IsAnagram(new string(a_array), new string(b_array)));
+        Assert.IsTrue(SetsAndMaps.IsAnagram(new string(a_array), new string(b_array)));
     }
 }
 
