@@ -195,11 +195,12 @@ public class IsAnagramTests
 
         for (int i = 0; i < length; ++i)
         {
-            a_array[i] = (char)rand.Next(256);
-            b_array[i] = (char)rand.Next(256);
+            char c = (char)rand.Next(256);
+            a_array[i] = c;
+            b_array[i] = c;
         }
 
-        Assert.IsFalse(SetsAndMaps.IsAnagram(new string(a_array), new string(b_array)));
+        Assert.IsTrue(SetsAndMaps.IsAnagram(new string(a_array), new string(b_array)));
     }
 }
 
