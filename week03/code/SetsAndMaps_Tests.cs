@@ -184,12 +184,12 @@ public class IsAnagramTests
     }
 
     // If this test takes longer than 5 seconds to run, your code is too inefficient.
-    //  On my machine, this executes in ~1 second with an efficient implementation.
+    //  On my machine, this executes in ~3 seconds with an efficient implementation.
     [TestMethod, Timeout(5000)]
     public void IsAnagram_Efficiency()
     {
         var rand = new Random();
-        var length = 30_000_000;
+        var length = 60_000_000;
         var a_array = new char[length];
         var b_array = new char[length];
 
