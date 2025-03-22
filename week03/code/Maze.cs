@@ -1,3 +1,6 @@
+using System.Reflection.Metadata.Ecma335;
+
+
 /// <summary>
 /// Defines a maze using a dictionary. The dictionary is provided by the
 /// user when the Maze object is created. The dictionary will contain the
@@ -25,6 +28,32 @@ public class Maze
         _mazeMap = mazeMap;
     }
 
+
+    public bool CanMove(int currX, int currY, Dictionary<ValueTuple<int, int>, bool[]> mazeMap, int direction, Action function)
+    {
+        if (mazeMap[(currX, currY)][direction] == false)
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+        else if (mazeMap[(currX, currY)][direction] == false)
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+        else if (mazeMap[(currX, currY)][direction] == false)
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+        else if (mazeMap[(currX, currY)][direction] == false)
+        {
+            throw new InvalidOperationException("Can't go that way!");
+        }
+        else
+        {
+            function();
+            return true;
+        }
+    }
+
     // TODO Problem 4 - ADD YOUR CODE HERE
     /// <summary>
     /// Check to see if you can move left.  If you can, then move.  If you
@@ -32,7 +61,8 @@ public class Maze
     /// </summary>
     public void MoveLeft()
     {
-        // FILL IN CODE
+        //    use function to check if you can move
+        CanMove(_currX, _currY, _mazeMap, 0, () => _currX--);
     }
 
     /// <summary>
@@ -41,7 +71,7 @@ public class Maze
     /// </summary>
     public void MoveRight()
     {
-        // FILL IN CODE
+        CanMove(_currX, _currY, _mazeMap, 1, () => _currX++);
     }
 
     /// <summary>
@@ -50,7 +80,7 @@ public class Maze
     /// </summary>
     public void MoveUp()
     {
-        // FILL IN CODE
+        CanMove(_currX, _currY, _mazeMap, 2, () => _currY--);
     }
 
     /// <summary>
@@ -59,7 +89,8 @@ public class Maze
     /// </summary>
     public void MoveDown()
     {
-        // FILL IN CODE
+        CanMove(_currX, _currY, _mazeMap, 3, () => _currY++);
+
     }
 
     public string GetStatus()
