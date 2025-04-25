@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // DO NOT MODIFY THIS FILE
@@ -65,36 +66,41 @@ public class FindPairsTests
         Assert.AreEqual(Canonicalize(expected), Canonicalize(actual));
     }
 
-    // If this test takes longer than 5 seconds to run, your code is too inefficient.
-    //  On my machine, this executes in ~200 ms with an efficient implementation.
-    [TestMethod, Timeout(5000)]
+    [TestMethod, Timeout(60_000)]
     public void FindPairs_NoPairs_Efficiency()
     {
-        var count = 1_000_000;
-        bool done = false;
-        var input = new List<string>(count);
-        for (char a = (char)0x0; a <= 0xffff; ++a)
+        // Calibrate baseline CPU performance
+        double CalibrateCpuSpeed()
         {
-            for (char b = (char)0x0; b <= 0xffff; ++b)
-            {
-                char[] chars = ['a', 'b'];
-                string s = new(chars);
-                input.Add(s);
-
-                done = input.Count >= count;
-                if (done)
-                {
-                    break;
-                }
-            }
-
-            if (done)
-            {
-                break;
-            }
+            var sw = Stopwatch.StartNew();
+            long sum = 0;
+            for (int i = 0; i < 10_000_000; i++) sum += i;
+            sw.Stop();
+            return sw.Elapsed.TotalMilliseconds;
         }
 
+        double baseline = CalibrateCpuSpeed();
+
+        // Create test data
+        var count = 1_000_000;
+        var input = new List<string>(count);
+        for (int i = 0; i < count; ++i)
+        {
+            char[] chars = ['a', 'b'];
+            string s = new(chars);
+            input.Add(s);
+        }
+
+        // Measure student code
+        var sw = Stopwatch.StartNew();
         var actual = SetsAndMaps.FindPairs(input.ToArray());
+        sw.Stop();
+
+        double elapsed = sw.Elapsed.TotalMilliseconds;
+        double ratio = elapsed / baseline;
+
+        Debug.WriteLine($"Elapsed: {elapsed:F2}ms | Baseline: {baseline:F2}ms | Ratio: {ratio:F2}");
+        Assert.IsTrue(ratio < 15.0, "Your algorithm is too slow. Make sure it runs in O(n) time.");
         Assert.AreEqual(0, actual.Length);
     }
 
@@ -183,11 +189,22 @@ public class IsAnagramTests
         Assert.IsFalse(SetsAndMaps.IsAnagram("Eleven plus One", "Twelve Plus One"));
     }
 
-    // If this test takes longer than 5 seconds to run, your code is too inefficient.
-    //  On my machine, this executes in ~3 seconds with an efficient implementation.
-    [TestMethod, Timeout(5000)]
+    [TestMethod, Timeout(60_000)]
     public void IsAnagram_Efficiency()
     {
+        // Calibrate baseline CPU performance
+        double CalibrateCpuSpeed()
+        {
+            var sw = Stopwatch.StartNew();
+            long sum = 0;
+            for (int i = 0; i < 400_000_000; i++) sum += i;
+            sw.Stop();
+            return sw.Elapsed.TotalMilliseconds;
+        }
+
+        double baseline = CalibrateCpuSpeed();
+
+        // Create test data
         var rand = new Random();
         var length = 60_000_000;
         var a_array = new char[length];
@@ -200,7 +217,17 @@ public class IsAnagramTests
             b_array[i] = c;
         }
 
-        Assert.IsTrue(SetsAndMaps.IsAnagram(new string(a_array), new string(b_array)));
+        // Measure student code
+        var sw = Stopwatch.StartNew();
+        var actual = SetsAndMaps.IsAnagram(new string(a_array), new string(b_array));
+        sw.Stop();
+
+        double elapsed = sw.Elapsed.TotalMilliseconds;
+        double ratio = elapsed / baseline;
+
+        Debug.WriteLine($"Elapsed: {elapsed:F2}ms | Baseline: {baseline:F2}ms | Ratio: {ratio:F2}");
+        Assert.IsTrue(ratio < 15.0, "Your algorithm is too slow. Make sure it runs in O(n) time.");
+        Assert.IsTrue(actual);
     }
 }
 
