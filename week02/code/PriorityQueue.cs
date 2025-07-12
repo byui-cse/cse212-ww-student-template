@@ -35,6 +35,8 @@
         return value;
     }
 
+    // DO NOT MODIFY THE CODE IN THIS METHOD
+    // We rely on this method in the tests we run while grading, so changes to it will cause you to lose points.
     public override string ToString()
     {
         return $"[{string.Join(", ", _queue)}]";
@@ -52,6 +54,8 @@ internal class PriorityItem
         Priority = priority;
     }
 
+    // DO NOT MODIFY THE CODE IN THIS METHOD
+    // We rely on this method in the tests we run while grading, so changes to it will cause you to lose points.
     public override string ToString()
     {
         return $"{Value} (Pri:{Priority})";
