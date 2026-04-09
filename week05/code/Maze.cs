@@ -51,7 +51,7 @@ public class Maze
     /// </summary>
     public bool IsEnd(int x, int y)
     {
-        return Data[y * Height + x] == 2;
+        return Data[y * Width + x] == 2;
     }
 
 
@@ -68,7 +68,7 @@ public class Maze
         if (y > Height - 1 || y < 0)
             return false;
         // Can't go through a wall
-        if (Data[y * Height + x] == 0)
+        if (Data[y * Width + x] == 0)
             return false;
         // Can't go if we have already been there (don't go in circles)
         if (currPath.Contains((x, y)))
